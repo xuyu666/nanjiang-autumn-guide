@@ -453,6 +453,43 @@ button {
   color: var(--accent-copy) !important;
   margin-top: 15px !important;
 }
+.day-schedule {
+  margin: 18px 0 22px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+.day-schedule h4 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.schedule-list {
+  display: grid;
+  gap: 10px;
+  max-width: 74ch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.schedule-list li {
+  display: grid;
+  grid-template-columns: 138px minmax(0,1fr);
+  gap: 12px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.schedule-list time {
+  color: var(--accent-copy);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.day-detail .schedule-note {
+  margin: 12px 0 0;
+  font-size: 13px;
+}
 .logistics {
   padding-top: 56px;
 }
@@ -496,6 +533,62 @@ tbody tr:not(:last-child) td {
 }
 .stay-group td:first-child {
   white-space: nowrap;
+}
+.travel-notes {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 38px clamp(32px,6vw,80px);
+  margin-top: 64px;
+}
+.travel-note-group {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.travel-note-group h3 {
+  margin: 0 0 16px;
+  font-family: var(--display);
+  font-size: 23px;
+}
+.travel-note-list,.source-list {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.travel-note-list li {
+  display: grid;
+  gap: 4px;
+}
+.travel-note-list strong {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+.travel-note-list span {
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.sources-group {
+  grid-column: 1 / -1;
+}
+.source-list {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px 26px;
+}
+.source-list li {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.source-list a {
+  color: var(--ink-soft);
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.source-list a:hover,.source-list a:focus-visible {
+  color: var(--ink);
+  text-decoration-color: currentColor;
 }
 .checklist {
   padding-top: 72px;
@@ -719,6 +812,26 @@ tbody tr:not(:last-child) td {
   }
   .day-detail b {
     min-width: 62px;
+  }
+  .schedule-list li {
+    grid-template-columns: 92px minmax(0,1fr);
+    gap: 8px;
+    font-size: 12px;
+  }
+  .schedule-list time {
+    font-size: 11px;
+  }
+  .travel-notes {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 42px;
+  }
+  .sources-group {
+    grid-column: auto;
+  }
+  .source-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
   .logistics {
     padding-top: 40px;
